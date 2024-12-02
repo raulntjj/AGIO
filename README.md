@@ -15,7 +15,9 @@ Certifique-se de que os seguintes itens estão instalados no seu sistema:
 
 ### Configurar ambiente de infraestrutura
 Copiando sua chave ID_RSA para o ambiente
+```bash
 cp ~/.ssh/id_rsa ~Desktop/AGIO/infrastructure
+```
 
 Certifique-se de que a chave pública desta chave id_rsa esteja configurada em seu github.
 
