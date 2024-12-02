@@ -14,4 +14,3 @@ export const getExternalApiData = async (request, response => {
 		});
 	}
 });
-  

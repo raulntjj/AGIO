@@ -1,4 +1,4 @@
-import * as userModels from '../models/userModels'´
+import * as userModel from '../models/userModels';
 
 export const getExternalApiData = async (request, response => {
 	try {

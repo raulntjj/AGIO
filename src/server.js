@@ -1,21 +1,20 @@
 import fastify from 'fastify';
 import userRoutes from './routes/userRoutes.js';
-import authRoutes from './routes/authRoutes.js';
+import staticRoutes from './routes/staticRoutes.js';
+import apiIntegration from './routes/apiIntegration.js';
 import prisma from './libs/prisma.js';
 import swagger from './libs/swagger.js';
-import jwtPlugin from './libs/jwt.js';
-import utilityRoutes from './routes/utilityRoutes.js';
 
 const app = fastify({ logger: true });
 
 // Libs
 app.register(prisma);
-app.register(jwtPlugin);
 app.register(swagger);
 
 // Routes
-app.register(utilityRoutes);
-app.register(authRoutes, { prefix: '/auth/v1' });
+app.register(staticRoutes, { prefix: '/api/v1' });
+app.register(apiIntegration, { prefix: '/api/v1' });
+app.register(authRoutes, { prefix: '/api/v1' });
 app.register(userRoutes, { prefix: '/api/v1' });
 
 const start = async () => {
