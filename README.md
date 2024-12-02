@@ -15,13 +15,13 @@ Retorna dados estáticos mockados. Os dados são simulados em uma variável est�
 
 ### **2. GET `/users`**
 **Descrição:**  
-Retorna dados de uma tabela em um banco de dados PostgreSQL. O banco pode ser configurado usando Docker ou a plataforma neon.tech. O uso do ORM Prisma foi recomendado.
+Retorna dados de uma tabela em um banco de dados PostgreSQL.
 
 ---
 
 ### **3. GET `/integration`**
 **Descrição:**  
-Realiza uma consulta HTTP a uma API pública (por exemplo, [JSONPlaceholder](https://jsonplaceholder.typicode.com/)) e retorna os dados da resposta em formato JSON.
+Realiza uma consulta HTTP a uma API pública JSONPlaceholder.
 
 ---
 
@@ -34,9 +34,6 @@ Retorna um status HTTP `200 OK` com uma mensagem de sucesso.
 ### **5. POST `/301`**
 **Descrição:**  
 Retorna um status HTTP `301 Moved Permanently` e redireciona para o site do Google.
-
-**Exemplo de resposta:**  
-Redireciona para: `https://google.com`
 
 ---
 
