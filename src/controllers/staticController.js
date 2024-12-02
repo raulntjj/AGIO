@@ -1,3 +1,4 @@
+// funcao para retornar dados estáticos
 export const getStaticData = async (request, response) => {
   try {
     const data = [
