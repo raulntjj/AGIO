@@ -1,19 +1,20 @@
-import * as userModel from '../models/userModels';
+import * as userService from '../services/userService.js';
 
-export const getExternalApiData = async (request, response => {
+// Funcao controladora para listar todos usuários
+export const getUsers = async (request, response) => {
 	try {
-		const users =  userModel.getAllUsers();
-		return response.status(201).send({
-			statusCode: 201,
-			message : 'Dados estáticos mockados recuperado com sucesso!',
+		const users = await userService.listUsers();
+		return response.send({
+			statusCode: 200,
+			message : 'Usuários recuperados com sucesso!',
 			payload : users
 		});
 	} catch (error) {
 		const statusCode = error.statusCode || 500;
 		return response.status(statusCode).send({
-				statusCode: statusCode,
-				message: error.message || 'Erro interno do servidor.',
+			statusCode: statusCode,
+			message: error.message || 'Erro interno do servidor.',
 		});
 	}
-});
+};
   

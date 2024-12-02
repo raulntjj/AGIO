@@ -19,6 +19,7 @@ app.register(userRoutes, { prefix: '/api/v1' });
 
 const start = async () => {
 	try {
+		// Configuracoes de portas do servidor
 		const port = process.env.PORT || 3000;
 		const host = process.env.PORT || '0.0.0.0';
 		await app.listen({ port, host });

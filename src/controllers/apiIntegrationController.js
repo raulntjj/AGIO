@@ -1,16 +1,17 @@
-export const getExternalApiData = async (request, response => {
-	try {
-		const api_url = process.env.API_URL;
-		return response.status(201).send({
-			statusCode: 201,
-			message : 'Dados estáticos mockados recuperado com sucesso!',
-			payload : data
-		});
-	} catch (error) {
-		const statusCode = error.statusCode || 500;
-		return response.status(statusCode).send({
-				statusCode: statusCode,
-				message: error.message || 'Erro interno do servidor.',
-		});
-	}
-});
+import fetchExternalApiData from '../services/apiIntegrationService.js';
+
+export const getExternalApiData = async (req, res) => {
+  try {
+    const data = await fetchExternalApiData();
+    res.status(200).json({
+      success: true,
+      data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Erro ao buscar dados da API externa.',
+      error: error.message, 
+    });
+  }
+};
