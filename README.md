@@ -9,8 +9,15 @@ Certifique-se de que os seguintes itens estão instalados no seu sistema:
 
 - Docker
 - Docker Compose
+- Makefile
 
 ## Como começar
+
+### Configurar ambiente de infraestrutura
+Copiando sua chave ID_RSA para o ambiente
+cp ~/.ssh/id_rsa ~Desktop/AGIO/infrastructure
+
+Certifique-se de que a chave pública desta chave id_rsa esteja configurada em seu github.
 
 ### Construir e iniciar o ambiente
 
