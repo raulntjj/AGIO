@@ -17,4 +17,3 @@ export const getUsers = async (request, response) => {
 		});
 	}
 };
-  

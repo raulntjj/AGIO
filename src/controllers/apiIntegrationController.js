@@ -1,11 +1,12 @@
-import fetchExternalApiData from '../services/apiIntegrationService.js';
+import * as apiIntegrationService from '../services/apiIntegrationService.js';
 
-export const getExternalApiData = async (req, res) => {
+export const getExternalApiData = async (request, response) => {
   try {
-    const data = await fetchExternalApiData();
-    res.status(200).json({
-      success: true,
-      data,
+    const data = await apiIntegrationService.fetchExternalApiData();
+    response.status(200).json({
+		statusCode: 200,
+		message : 'Dados estáticos mockados recuperados com sucesso!',
+	 	 payload : data
     });
 	} catch (error) {
 		const statusCode = error.statusCode || 500;

@@ -1,4 +1,4 @@
-export const getStaticData = async (request, response => {
+export const getStaticData = async (request, response) => {
   try {
     const data = [
 			{ id: 1, name: "Item 1" },
@@ -17,4 +17,4 @@ export const getStaticData = async (request, response => {
 			message: error.message || 'Erro interno do servidor.',
 		});
 	}
-});
+};

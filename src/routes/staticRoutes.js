@@ -1,5 +1,5 @@
-import staticController from '../controllers/staticController';
+import * as staticController from '../controllers/staticController.js';
 
 export default async (app) => {
-  app.get('/static', staticController);
+  app.get('/static', staticController.getStaticData);
 };
