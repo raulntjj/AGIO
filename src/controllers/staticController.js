@@ -5,9 +5,9 @@ export const getStaticData = async (request, response => {
 			{ id: 2, name: "Item 2" },
 		];
 
-    return response.status(201).send({
-      statusCode: 201,
-      message : 'Dados estáticos mockados recuperado com sucesso!',
+    return response.status(200).send({
+      statusCode: 200,
+      message : 'Dados estáticos mockados recuperados com sucesso!',
       payload : data
     });
 	} catch (error) {

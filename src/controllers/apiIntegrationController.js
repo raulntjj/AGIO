@@ -7,11 +7,11 @@ export const getExternalApiData = async (req, res) => {
       success: true,
       data,
     });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: 'Erro ao buscar dados da API externa.',
-      error: error.message, 
-    });
-  }
+	} catch (error) {
+		const statusCode = error.statusCode || 500;
+		return response.status(statusCode).send({
+			statusCode: statusCode,
+			message: error.message || 'Erro interno do servidor.',
+		});
+	}
 };

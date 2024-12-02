@@ -1,5 +1,5 @@
 import userController from '../controllers/userController';
 
 export default async (app) => {
-    app.get('/users', staticController);
+    app.get('/users', userController);
 };
